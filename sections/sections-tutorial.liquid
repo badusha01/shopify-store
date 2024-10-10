@@ -1,0 +1,74 @@
+<p>hello world</p>
+
+<h2>Text Setting</h2>
+<p>{{ section.settings.text_setting }}</p>
+
+<h2>Textarea Setting</h2>
+<p>{{ section.settings.textarea_setting | newline_to_br }}</p>
+
+<h2>Richtext Setting</h2>
+<div>{{ section.settings.richtext_setting }}</div>
+
+<h2>Inline Richtext Setting</h2>
+<div>{{ section.settings.inline_richtext_setting }}</div>
+
+<h2>Number Setting</h2>
+<p>{{ section.settings.number_setting }}</p>
+
+{% schema %}
+{
+    "name": "Sections Tutorial",
+    "tag": "section",
+    "class": "section-tutorial",
+    "limit": 2,
+    "settings": [
+        {
+            "type": "text",
+            "id": "text_setting",
+            "label": "Theme Setting",
+            "default": "This is my first setting",
+            "info": "This is some helper text"
+        },
+        {
+            "type": "textarea",
+            "id": "textarea_setting",
+            "label": "Textarea Setting",
+        },
+        {
+            "type": "richtext",
+            "id": "richtext_setting",
+            "label": "Richtext Setting"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "inline_richtext_setting",
+            "label": "Inline Richtext Setting"
+        },
+        {
+            "type": "number",
+            "id": "number_setting",
+            "label": "Number Setting",
+            "placeholder": "This is a placeholder"
+        },
+        {
+            "type": "range",
+            "id": "range_setting",
+            "label": "Range Setting",
+            "min": 50,
+            "max": 150,
+            "step": 5,
+            "unit": "px",
+            "default": 60
+        }
+    ],
+    "blocks": [],
+    "presets": [
+        {
+            "name": "Sections Tutorial",
+            "settings": {}
+        }
+    ]
+}
+{% endschema %}
+
+
